@@ -83,39 +83,36 @@ p dragon1
 
 
 class Hobbit
-    def initialize(name, disposition)
-        @name = "#{name}"
-        @has_ring = 
-          if (name != "Frodo")
-            false
-            else true
-          end
-        @disposition = "#{disposition}"
-        @age = 0
-        @is_adult = false
-        @is_old = false
-    end
+  def initialize(name, disposition)
+      @name = "#{name}"
+      @has_ring = 
+        if (name != "Frodo")
+          false
+          else true
+        end
+      @disposition = "#{disposition}"
+      @age = 0
+      @is_adult = false
+      @is_old = false
+  end
 
-    
   
-    def celebrate_birthday(number_of_birthdays)
-      @number_of_birthdays = number_of_birthdays
-      @age = @number_of_birthdays 
-      if 
-        number_of_birthdays >= 33
-        @is_adult = true
-      end
-      if number_of_birthdays >= 101
-        @is_old = true
-      end
+
+  def celebrate_birthday
+    @age = @age.next
+    if 
+      @age >= 33
+      @is_adult = true
     end
-  
+    if @age >= 101
+      @is_old = true
+    end
+  end
+
 end
 
 
 
 p hobbit1 = Hobbit.new("Frodo", "Inquisitive")
-hobbit1.celebrate_birthday(50)
-p hobbit1
-hobbit1.celebrate_birthday(150)
+130.times {hobbit1.celebrate_birthday}
 p hobbit1
